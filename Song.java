@@ -40,6 +40,24 @@ public class Song {
       * song easily as well!
       * What kind of mutator (setter) methods will you need?
       */
+      public String getName(){
+        return name;
+      }
+      public String getArtist(){
+        return artist;
+      }
+      public int getDuration(){
+        return duration;
+      }
+      public boolean getIsLiked(){
+        return isLiked;
+      }
+      public String toString(){
+        return "name: " + name + " artist: " + artist + " duration: " + duration + " is the song liked: " + isLiked;
+      }
+      public void like(){
+        isLiked = true;
+      }
 
 
 }
