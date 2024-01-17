@@ -5,6 +5,10 @@
  */
 public class Song {
     //Fields-- what information do we want each Song to store?
+    private boolean isLiked;
+    private String name;
+    private int duration;
+    private String artist;
 
 
 
