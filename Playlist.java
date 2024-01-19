@@ -7,10 +7,8 @@ public class Playlist {
        playlist = new ArrayList<Song>();
     }
       
-
       /**
        * Methods-- Remember that you need to be able to complete all of the following:
-       * Adding a song
        * 'liking' a song
        * Removing a specific song
        * Examining all Songs (a String return or void print makes sense here)
@@ -18,4 +16,36 @@ public class Playlist {
        * Determining the total duration of all songs
        * Removing all unliked songs from the playlist (careful with this one!)
        */
+
+    public void addSong(Song song) {
+        playlist.add(song);
+    }
+
+    public void removeSong(int index) {
+        playlist.remove(index);
+    }
+
+    // public void likeSong(int index) {
+    //     playlist.get(index).like();
+    // }
+
+    // public String getLikedSongs() {
+    //     String likedSongs = "";
+
+    //     for (Song song : playlist) 
+    //         if (song.isLiked())
+    //             likedSongs += song.getName();
+        
+    //     return likedSongs;
+    // }
+
+    // public String toString() {
+    //     String str = "";
+
+    //     for (Song song : playlist) {
+    //         str += song.getName();
+    //     }
+
+    //     return str;
+    // }
 }
