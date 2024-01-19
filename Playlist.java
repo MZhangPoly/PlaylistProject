@@ -25,27 +25,27 @@ public class Playlist {
         playlist.remove(index);
     }
 
-    // public void likeSong(int index) {
-    //     playlist.get(index).like();
-    // }
+    public void likeSong(int index) {
+        playlist.get(index).like();
+    }
 
-    // public String getLikedSongs() {
-    //     String likedSongs = "";
+    public String getLikedSongs() {
+        String likedSongs = "";
 
-    //     for (Song song : playlist) 
-    //         if (song.isLiked())
-    //             likedSongs += song.getName();
+        for (Song song : playlist) 
+            if (song.getIsLiked())
+                likedSongs += song.getName();
         
-    //     return likedSongs;
-    // }
+        return likedSongs;
+    }
 
-    // public String toString() {
-    //     String str = "";
+    public String toString() {
+        String str = "";
 
-    //     for (Song song : playlist) {
-    //         str += song.getName();
-    //     }
+        for (Song song : playlist) {
+            str += song.getName();
+        }
 
-    //     return str;
-    // }
+        return str;
+    }
 }
