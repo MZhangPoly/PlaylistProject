@@ -56,11 +56,15 @@ public class Playlist {
         return printSongs(playlist);
     }
 
+    public String toString() {
+        return getAllSongs();
+    }
+
     private String printSongs(ArrayList<Song> songs) {
         String str = "";
 
         for (Song song : songs) {
-            str += song;
+            str += song + "\n";
         }
 
         return str;
