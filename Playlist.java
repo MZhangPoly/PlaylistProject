@@ -1,34 +1,72 @@
 import java.util.ArrayList;
 
 /**
- * The Playlist class, which will keep track of a playlist of Song objects
- * Refer to the project description to make sure you have access to all available methods
+ * @author Michael Zhang
+ * @version 18 January 2024
  */
-public class Playlist {
-    /**
-     * Fields-- This will likely just need to be the ArrayList of Songs. Reference our previous problems
-     * (CarDealership, Zoo) for structure on how this will look
-     */
 
+public class Playlist { 
+    ArrayList<Song> playlist;
 
+    public Playlist() {
+       playlist = new ArrayList<Song>();
+    }
 
+    public void addSong(Song song) {
+        playlist.add(song);
+    }
 
-     /**
-      * Constructor-- this doesn't need any parameters. You should just initialize the ArrayList and
-      * then use additional methods to add Songs in one-by-one
-      */
+    public void removeSong(int index) {
+        playlist.remove(index);
+    }
 
+    public void removeUnlikedSongs() {
+        for (int i = 0; i < playlist.size(); i++) {
+            if (!playlist.get(i).getIsLiked()) {
+                playlist.remove(i);
+                i--;
+            }
+        }
+    }
 
-      
+    public int getTotalDuration() {
+        int totalDuration = 0;
 
-      /**
-       * Methods-- Remember that you need to be able to complete all of the following:
-       * Adding a song
-       * 'liking' a song
-       * Removing a specific song
-       * Examining all Songs (a String return or void print makes sense here)
-       * Examining a sublist of all liked songs
-       * Determining the total duration of all songs
-       * Removing all unliked songs from the playlist (careful with this one!)
-       */
+        for (Song song : playlist)
+            totalDuration += song.getDuration();
+
+        return totalDuration;
+    }
+
+    public void likeSong(int index) {
+        playlist.get(index).like();
+    }
+
+    public String getLikedSongs() {
+        ArrayList<Song> likedSongs = new ArrayList<Song>();
+
+        for (Song song : playlist) 
+            if (song.getIsLiked())
+                likedSongs.add(song);
+
+        return printSongs(likedSongs);
+    }
+
+    public String getAllSongs() {
+        return printSongs(playlist);
+    }
+
+    public String toString() {
+        return getAllSongs();
+    }
+
+    private String printSongs(ArrayList<Song> songs) {
+        String str = "";
+
+        for (Song song : songs) {
+            str += song + "\n";
+        }
+
+        return str;
+    }
 }
