@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/**
+ * @author Michael Zhang
+ * @version 18 January 2024
+ */
+
 public class Playlist { 
     ArrayList<Song> playlist;
 
@@ -37,21 +42,21 @@ public class Playlist {
         playlist.get(index).like();
     }
 
-    public String examineLikedSongs() {
+    public String getLikedSongs() {
         ArrayList<Song> likedSongs = new ArrayList<Song>();
 
         for (Song song : playlist) 
             if (song.getIsLiked())
                 likedSongs.add(song);
 
-        return examineSongs(likedSongs);
+        return printSongs(likedSongs);
     }
 
-    public String examineAllSongs() {
-        return examineSongs(playlist);
+    public String getAllSongs() {
+        return printSongs(playlist);
     }
 
-    private String examineSongs(ArrayList<Song> songs) {
+    private String printSongs(ArrayList<Song> songs) {
         String str = "";
 
         for (Song song : songs) {
