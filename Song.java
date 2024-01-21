@@ -53,7 +53,7 @@ public class Song {
         return isLiked;
       }
       public String toString(){
-        return "name: " + name + " artist: " + artist + " duration: " + duration + " is the song liked: " + isLiked;
+        return "name: " + name + " artist: " + artist + " duration: " + duration/60+ ":" + duration%60 + " is the song liked: " + isLiked;
       }
       public void like(){
         isLiked = true;
