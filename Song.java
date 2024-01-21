@@ -1,7 +1,7 @@
 /**
  * File for a Song class to be used in the Playlist Project
- * @author
- * @version
+ * @author Daniel Ismagilov
+ * @version 1/21/2024
  */
 public class Song {
     //Fields-- what information do we want each Song to store?
@@ -53,7 +53,7 @@ public class Song {
         return isLiked;
       }
       public String toString(){
-        return "name: " + name + " artist: " + artist + " duration: " + duration + " is the song liked: " + isLiked;
+        return "name: " + name + " artist: " + artist + " duration: " + duration/60+ ":" + duration%60 + " is the song liked: " + isLiked;
       }
       public void like(){
         isLiked = true;
